@@ -23,11 +23,11 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    return (this.turns - this.incorrectGuesses.length) / this.turns * 100;
+    return Math.round((this.turns - this.incorrectGuesses.length) / this.turns * 100);
   }
 
   endRound() {
-    const endMessage = `**d over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+    const endMessage = `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
     console.log(endMessage);
     return endMessage;
   }
